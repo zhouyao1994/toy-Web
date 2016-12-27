@@ -17,11 +17,12 @@ def hello_world2():
     return render_template("index.html",name = name)
 
 
-@main.route("/login")
+@main.route("/login",methods=['GET', 'POST'])
 def login():
     loginForm = LoginForm()
     if loginForm.validate_on_submit():
-        user = User.query.filter_by(email=loginForm.email.data).first()
+        user = User.query.filter_by(username=loginForm.username.data).first()
         if user is not None and user.password == loginForm.password.data:
-            flash(_("login success"))
+            flash("login success")
+
     return render_template("login.html",form = loginForm)
