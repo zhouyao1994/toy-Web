@@ -23,5 +23,11 @@ class NewvistorTest(unittest.TestCase):
         #是否有helloword
         self.assertIn("Hello",brower.find_element_by_xpath("//body").text)
 
+    def test_login(self):
+        brower = self.browser
+        brower.get("http://127.0.0.1:5000/login")
+        time.sleep(3)
+        self.assertIn("邮箱",brower.find_element_by_xpath(""))
+
 if __name__ == '__main__':
     unittest.main()

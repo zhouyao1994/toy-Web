@@ -4,6 +4,7 @@
 
 from flask import Blueprint
 
-main = Blueprint('main',__name__)
+#这个名字无关紧要
+main = Blueprint('mainxxxxx',__name__)
 
 from . import view
