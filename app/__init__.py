@@ -12,6 +12,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 login = LoginManager()
+login.login_view = 'main.login'#没有登录情况下，访问需要登录的页面会跳转到这里，字符串作为url_for参数
+login.session_protection = 'strong'
 
 
 def create_app():
@@ -21,6 +23,7 @@ def create_app():
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     db.init_app(app)
     bootstrap.init_app(app)
+    login.init_app(app)
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
     return app

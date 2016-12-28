@@ -29,7 +29,21 @@ class NewvistorTest(unittest.TestCase):
 
         #登录
         sub = sub.click()
-        time.sleep(4)
+        # time.sleep(2)
+
+        brower.get("http://localhost:5000/register")
+        time.sleep(2)
+        ruser = brower.find_element_by_id("username")
+        rpass = brower.find_element_by_id("password")
+        rpass2 = brower.find_element_by_id("password2")
+        rsub = brower.find_element_by_id("submit")
+
+        ruser.send_keys("demo3")
+        rpass.send_keys("demo1")
+        rpass2.send_keys("demo1")
+        rsub.click()
+        time.sleep(3)
+
 
 if __name__ == '__main__':
     unittest.main()
