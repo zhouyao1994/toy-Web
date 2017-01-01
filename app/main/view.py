@@ -10,6 +10,7 @@ from flask_login import login_user,logout_user,login_required
 
 #添加特性二
 # 添加特性一
+# 合并之后添加
 @main.route('/hello')
 def hello_world():
     return 'Hello World!'
