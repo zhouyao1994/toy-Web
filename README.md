@@ -1,2 +1,2 @@
 # toy-Web
-# 用于尝试flask web开发
+用于尝试flask web开发
