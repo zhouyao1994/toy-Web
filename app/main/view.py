@@ -9,6 +9,7 @@ from flask import url_for, render_template, redirect, flash
 from flask_login import login_user,logout_user,login_required
 
 #添加特性二
+# 添加特性一
 @main.route('/hello')
 def hello_world():
     return 'Hello World!'
